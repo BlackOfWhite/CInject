@@ -1,2 +1,2 @@
 # CInject
-Self made dependency injection library
+Self made and lightweight dependency injection library. 
