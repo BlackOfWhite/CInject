@@ -3,9 +3,9 @@ package org;
 import org.di.CDI;
 import org.di.CDIFramework;
 import org.di.mapper.CMapperImpl;
-import org.model.School;
-import org.model.Student;
-import org.model.User;
+import org.model.Company;
+import org.model.emplyees.Engineer;
+import org.model.emplyees.Employee;
 import org.model.authors.Author;
 import org.model.authors.Mickiewicz;
 import org.model.authors.Slowacki;
@@ -18,7 +18,7 @@ public class Main {
         CMapperImpl diConfig = new CMapperImpl() {
             @Override
             public void configure() {
-                addMapping(User.class, Student.class);
+                addMapping(Employee.class, Engineer.class);
                 addMapping(Book.class, Dictionary.class);
                 addMapping(Book.class, Fantasy.class);
                 addMapping(Author.class, Slowacki.class);
@@ -26,7 +26,7 @@ public class Main {
             }
         };
         final CDIFramework ownDi = CDI.getFramework(diConfig);
-        final School school = ownDi.inject(School.class);
-        System.out.println(school);
+        final Company company = ownDi.inject(Company.class);
+        System.out.println(company);
     }
 }

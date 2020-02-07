@@ -1,20 +1,23 @@
-package org.model;
+package org.model.emplyees;
 
 import org.di.annotations.CInject;
+import org.di.annotations.Default;
 import org.model.book.Book;
 
-public class Student implements User {
-
-    private String name;
+@Default
+public class Engineer implements Employee {
 
     @CInject("Fantasy")
     private Book book;
 
-    public Student() {
+
+    private String name;
+
+    public Engineer() {
 
     }
 
-    public Student(String name) {
+    public Engineer(String name) {
         this.name = name;
     }
 
